@@ -18,8 +18,10 @@
     text-decoration: underline;
   }
 
-  body {
-    font-family: 'Josefin Sans'
+  html, body {
+    font-family: 'Josefin Sans';
+    height: 100%;
+    color: #333333;
   }
 
   .carousel-inner>.carousel-item>img,
@@ -29,7 +31,15 @@
     opacity: .6;
   }
 
-  .carousel-content {
+  .carousel, .carousel-item, .active {
+    height: 100%;
+  }
+
+  .carousel-inner {
+    height: 100%;
+  }
+
+  /* .carousel-content {
     position: absolute;
     top: 50%;
     left: 40%;
@@ -37,7 +47,7 @@
     color: white;
 
     vertical-align: middle;
-  }
+  } */
 
   .carousel-indicators li {
     background-color: #999;
@@ -48,8 +58,8 @@
     background-color: #444;
   }
 
-  .micarousel {
-    margin-top: -150px;
+   .micarousel {
+    margin-top: -126px;
   }
 
   .mynav {
@@ -60,22 +70,27 @@
     text-shadow: 1px 1px 2px black;
   }
 
-  .navbar a {
-    color: white;
-    text-shadow: 1px 1px 2px black;
-  }
+  /* .nav-link {
+    color: white !important;
+    text-shadow: 0 1px black;
+  } */
+
 
   a:hover {
-    color: #bc2e29;
+    color: #bc2e29 !important;
   }
 
-  .nav-tabs>li>a:hover {
-    color: #bc2e29 !important;
-    transition: 0.3s;
+  a.order-online:hover{
+    color: white !important;
   }
+
+  .nav-tabs > li > a {
+    color: black !important;
+  }
+
 
   .nav-tabs>li>a.active {
-    color: #bc2e29;
+    color: #bc2e29 !important;
   }
 
   .secondary-color {
@@ -86,6 +101,10 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
+  }
+
+  .tab-pane {
+    height: 100%;
   }
 
   .menu-title {
@@ -108,28 +127,40 @@
   }
 
   #reviews {
-    height: 25%;
+    height: 30%;
     background-color: #f2f2f2;
+    display: block;
   }
+
+  .days {
+    font-size: .8em;
+  }
+
 
 
 
 </style>
 
 <body>
-  <nav class="navbar navbar-expand-sm mynav">
+  <nav class="navbar navbar-light navbar-expand-sm mynav" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <a href="#" class="navbar-brand"><img class="logo" src="logo.png" style="width:100px;"alt="BK Bagels"></a>
+        <a href="#" class="navbar-brand"><img class="logo" src="graphics/logo.png" style="width:100px;"alt="BK Bagels"></a>
       </div>
-      <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-        <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
-      </ul>
-      <!-- <button class="btn btn-danger navbar-btn text-right">Order Online</button> -->
-      <a class="btn btn-danger" href="https://www.seamless.com/menu/bk-bagels-1120-broadway-brooklyn/321597" target="_blank">Order Online</a>
+      <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-light navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
+        </ul>
+        <!-- <button class="btn btn-danger navbar-btn text-right">Order Online</button> -->
+        <a class="btn btn-danger order-online" href="https://www.seamless.com/menu/bk-bagels-1120-broadway-brooklyn/321597" target="_blank">Order Online</a>
+    </div>
   </nav>
   </div>
 
@@ -143,10 +174,7 @@
 
     <div class="carousel-inner text-center">
       <div class="carousel-item active">
-        <img class="img-fluid" src="menu.jpg" alt="Menu">
-        <div class="carousel-content">
-          <h1 class="text-center">BK Bagels</h1>
-        </div>
+        <img class="img-fluid" src="images/menu.jpg" alt="Menu">
 
         <div class="carousel-caption">
           <p>We serve bagels, coffee, juices and more. Check out our menu!</p>
@@ -154,21 +182,21 @@
       </div>
 
       <div class="carousel-item">
-        <img class="img-fluid" src="store.jpg" alt="Store">
+        <img class="img-fluid" src="images/store.jpg" alt="Store">
         <div class="carousel-caption">
           <p>Inside our store.</p>
         </div>
       </div>
 
       <div class="carousel-item">
-        <img class="img-fluid" src="bagel.jpg" alt="Bagels">
+        <img class="img-fluid" src="images/bagel.jpg" alt="Bagels">
         <div class="carousel-caption">
           <p>We have an array of delicious bagels.</p>
         </div>
       </div>
 
       <div class="carousel-item">
-        <img class="img-fluid" src="cookies.jpg" alt="Pastries">
+        <img class="img-fluid" src="images/cookies.jpg" alt="Pastries">
         <div class="carousel-caption">
           <p>Donuts comings soon!</p>
         </div>
@@ -199,7 +227,7 @@
             irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
         <div class="col-6 rightscroll">
-          <img src="menu2.jpg" alt="Menu" style="width:370px;">
+          <img class="img-fluid" src="images/menu2.jpg" alt="Menu" style="width:370px;">
         </div>
 
       </div>
@@ -227,18 +255,6 @@
   </div>
   </div>
 
-  <!-- <div class="container">
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-            <a data-toggle = "tab" href="#coffee" class="nav-link active">Coffee</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle = "tab" href="#bagels">Bagels</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle = "tab" href="#juices">Juices</a>
-          </li>
-        </ul> -->
 
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active container" id="pills-bev" role="tabpanel" aria-labelledby="pills-bev-tab"><br>
@@ -626,7 +642,7 @@
     <!--bagel-pills-->
     <div class="tab-pane fade container" id="pills-juices" role="tabpanel" aria-labelledby="pills-juices-tab"><br>
       <h2 class="text-center secondary-color"><strong>Juices</strong></h2>
-      <p class="text-center"><em><span class="text-danger">16oz</span> - <span class="text-primary">$6.75</span> | <span class="text-danger">20oz</span> - <span class="text-primary">$7.75</span></em></p>
+      <p class="text-center"><em>16oz - $6.75 | 20oz - $7.75</em></p>
       <div class="text-center">
         <div class="row">
           <div class="col">
@@ -689,11 +705,10 @@
   <div id="reviews">
     <div class="container">
       <br>
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="8000">
+      <div id="carouselExampleSlidesOnly" class="carousel slide reviewcarousel" data-ride="carousel" data-interval="8000">
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active text-center">
-            <p style="font-family:'Roboto Slab';">Ordered from them on seamless all the time but stopped in and still had a great experience. Food is so good and so many options (bagels, pastries, burgers, coffee). The delivery is also always super fast (but I do only live four blocks away).
-              Would recommend for any time of the day, they have burgers too!</p>
+            <p style="font-family:'Roboto Slab';">Ordered from them on Seamless all the time but stopped in and still had a great experience. Food is so good and so many options. Would recommend for any time of the day.</p>
             <span class="text-danger">Victoria L.</span><br>
             <span class="secondary-color">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
             <br><br>
@@ -705,8 +720,7 @@
                 <br><br><br>
           </div>
           <div class="carousel-item text-center">
-            <p style="font-family:'Roboto Slab';">Amazing. I love this place. I go there almost everyday, I always get a muffin and a croissant with a small coffee. Their sweets are baked on sight hence why I buy them. The grills are amazing cooks, friendly and personable. Saved the best
-              for last: their staff is friendly, curteous, and personable. You wouldn't be disappointed with your little BK Bagel experience!</p>
+            <p style="font-family:'Roboto Slab';">Amazing. I go there almost everyday. Their sweets are baked on sight hence why I buy them. Their staff is friendly, curteous, and personable.</p>
             <span class="text-danger">Randy R.</span><br>
             <span class="secondary-color">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
           </div>
@@ -747,6 +761,7 @@
           <p>
             <strong class="text-danger">Hours</strong>
             <br>
+            <br><span style="text-decoration:underline;">Monday-Sunday</span>
             <br>7:00 AM - 6:00 PM
           </p>
         </div>
